@@ -1,0 +1,12 @@
+#Files
+*.iml
+*.ipr
+*.iws
+
+#Directories
+.idea/
+.gradle/
+build/
+out/
+target/
+

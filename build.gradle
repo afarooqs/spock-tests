@@ -1,0 +1,54 @@
+apply plugin: "java"
+apply plugin: "groovy"
+apply plugin: "maven"
+apply plugin: "checkstyle"
+apply plugin: "idea"
+
+group = "com.playground"
+version = "0.0.1"
+
+description = """spock-tests"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    ext {
+        springBootVersion = "2.0.0.RELEASE"
+    }
+    repositories {
+        maven { url "https://artifacts.mastercard.int/artifactory/maven-all" }
+        maven { url "https://artifacts.mastercard.int/artifactory/releases" }
+        maven { url "https://artifacts.mastercard.int/artifactory/snapshots-all" }
+        maven { url "https://artifacts.mastercard.int/artifactory/maven-external-reslease" }
+    }
+    dependencies {
+    }
+}
+
+
+repositories {
+    mavenLocal()
+    maven { url "https://artifacts.mastercard.int/artifactory/maven-all" }
+    maven { url "https://artifacts.mastercard.int/artifactory/releases" }
+    maven { url "https://artifacts.mastercard.int/artifactory/snapshots-all" }
+    maven { url "https://artifacts.mastercard.int/artifactory/maven-external-reslease" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/releases" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/public-snapshots" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/public" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/dante-remote" }
+}
+
+dependencies {
+    compile group: "org.codehaus.groovy", name: "groovy-all", version: "2.4.11"
+    compile group: "org.spockframework", name: "spock-core", version: "1.1-groovy-2.4"
+}
+
+//apply from: "$projectDir/integration.gradle"
+//
+//sourceSets {
+//    integrationTest {
+//        groovy.srcDir "src/integration/groovy"
+//        resources.srcDir "src/integration/resources"
+//    }
+//}
